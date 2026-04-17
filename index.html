@@ -3,56 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QuantumPC</title>
+<title>CyberCore - Tienda Pro</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #0f172a;
+    background: #0f172a;
     color: white;
 }
 
 header {
-    background: linear-gradient(90deg, #0ea5e9, #6366f1);
+    background: linear-gradient(90deg, #06b6d4, #3b82f6);
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 40px;
-}
-
 nav {
-    text-align: center;
     background: #1e293b;
     padding: 10px;
+    text-align: center;
 }
 
 nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #38bdf8;
 }
 
 .container {
-    padding: 30px;
+    padding: 20px;
+}
+
+h2 {
     text-align: center;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
     background: #1e293b;
-    padding: 20px;
-    margin: 15px;
     border-radius: 15px;
-    display: inline-block;
-    width: 250px;
+    margin: 15px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
     transition: transform 0.3s;
 }
 
@@ -65,11 +64,29 @@ nav a:hover {
     border-radius: 10px;
 }
 
-footer {
+button {
+    background: #06b6d4;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0891b2;
+}
+
+#cart {
     background: #020617;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer {
     text-align: center;
     padding: 15px;
-    margin-top: 20px;
+    background: #020617;
 }
 </style>
 </head>
@@ -77,59 +94,118 @@ footer {
 <body>
 
 <header>
-    <h1>QuantumPC</h1>
-    <p>Soluciones tecnológicas a tu alcance</p>
+    <h1>CyberCore</h1>
+    <p>Tecnología, potencia y rendimiento</p>
 </header>
 
 <nav>
     <a href="#">Inicio</a>
-    <a href="#">Productos</a>
-    <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
+    <a href="#">PC Gamer</a>
+    <a href="#">Laptops</a>
+    <a href="#">Accesorios</a>
+    <a href="#cart">Carrito</a>
 </nav>
 
 <div class="container">
-    <h2>Sobre Nosotros</h2>
-    <p>
-    Una empresa de computadoras es un negocio que se dedica a la venta, reparación y mantenimiento de equipos como PCs, laptops y accesorios. 
-    Su objetivo es ofrecer soluciones tecnológicas para facilitar el estudio, el trabajo y la comunicación, brindando también soporte técnico y asesoría a sus clientes.
-    </p>
+    <h2>Productos</h2>
+
+    <div class="products">
+
+        <!-- PC -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7">
+            <h3>PC Gamer RGB</h3>
+            <p>S/ 4000</p>
+            <button onclick="addToCart('PC Gamer RGB', 4000)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68">
+            <h3>PC Oficina</h3>
+            <p>S/ 1800</p>
+            <button onclick="addToCart('PC Oficina', 1800)">Agregar</button>
+        </div>
+
+        <!-- Laptops -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+            <h3>Laptop HP</h3>
+            <p>S/ 2800</p>
+            <button onclick="addToCart('Laptop HP', 2800)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853">
+            <h3>Laptop Gamer</h3>
+            <p>S/ 5000</p>
+            <button onclick="addToCart('Laptop Gamer', 5000)">Agregar</button>
+        </div>
+
+        <!-- Accesorios -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3">
+            <h3>Teclado RGB</h3>
+            <p>S/ 200</p>
+            <button onclick="addToCart('Teclado RGB', 200)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1586349906319-48d3b0d5c53b">
+            <h3>Mouse Gamer</h3>
+            <p>S/ 120</p>
+            <button onclick="addToCart('Mouse Gamer', 120)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1616627981436-66a7d8a71f4f">
+            <h3>Monitor 24"</h3>
+            <p>S/ 900</p>
+            <button onclick="addToCart('Monitor 24', 900)">Agregar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
+            <h3>Auriculares Gamer</h3>
+            <p>S/ 250</p>
+            <button onclick="addToCart('Auriculares Gamer', 250)">Agregar</button>
+        </div>
+
+    </div>
 </div>
 
-<div class="container">
-    <h2>Nuestros Productos</h2>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7" alt="PC Gamer">
-        <h3>PC Gamer</h3>
-        <p>Alto rendimiento para juegos</p>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8" alt="Laptop">
-        <h3>Laptops</h3>
-        <p>Portátiles para estudio y trabajo</p>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3" alt="Accesorios">
-        <h3>Accesorios</h3>
-        <p>Teclados, mouse y más</p>
-    </div>
-
-</div>
-
-<div class="container">
-    <h2>Servicios</h2>
-    <p>✔ Reparación de computadoras</p>
-    <p>✔ Eliminación de virus</p>
-    <p>✔ Instalación de programas</p>
-    <p>✔ Mantenimiento técnico</p>
+<div id="cart" class="container">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items"></ul>
+    <h3>Total: S/ <span id="total">0</span></h3>
 </div>
 
 <footer>
-    <p>© 2026 QuantumPC - Todos los derechos reservados</p>
+    <p>© 2026 CyberCore</p>
 </footer>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(product, price) {
+    cart.push({product, price});
+    total += price;
+    updateCart();
+}
+
+function updateCart() {
+    let list = document.getElementById("cart-items");
+    list.innerHTML = "";
+
+    cart.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item.product + " - S/ " + item.price;
+        list.appendChild(li);
+    });
+
+    document.getElementById("total").textContent = total;
+}
+</script>
 
 </body>
 </html>
